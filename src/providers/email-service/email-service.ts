@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 
-const BASE_URL = "https://elms-admin.herokuapp.com/";
+const BASE_URL = "https://whosoff-admin.herokuapp.com/";
 
 @Injectable()
 export class EmailServiceProvider {
