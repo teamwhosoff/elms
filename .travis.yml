@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "stable"
     
-addons:
-  ssh_known_hosts: git.ionicjs.com
-  
 sudo: required
 
 branches:
@@ -19,13 +16,3 @@ before_script:
 script:
   - ionic build --platform browser
 
-after_success:  
-  - firebase deploy --token "${FIREBASE_TOKEN}"
-  - ionic login ${IONIC_EMAIL} ${IONIC_PASSWORD}
-  - eval "$(ssh-agent -s)"
-  - chmod 600 ./.travis/deploy_rsa
-  - ssh-add ./.travis/deploy_rsa
-  - ionic monitoring syncmaps
-  - ionic link --pro-id d215c909
-  - ionic git remote  
-  - git push ionic HEAD:master
