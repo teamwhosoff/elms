@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { NotificationsPage } from './notifications';
 import { PipesModule } from '../../pipes/pipes.module';
-import { TimeAgoPipeModule } from "time-ago-pipe/index";
+import { TimeAgoPipe } from "time-ago-pipe";
 
 @NgModule({
   declarations: [
-    NotificationsPage
+    NotificationsPage,
+    TimeAgoPipe
   ],
   imports: [
     IonicPageModule.forChild(NotificationsPage),
-    PipesModule,
-    TimeAgoPipeModule
+    PipesModule
   ],
   exports:[
   ]
