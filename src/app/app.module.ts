@@ -19,9 +19,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { UserServiceProvider } from '../providers/user-service/user-service';
-import { LeaveServiceProvider } from '../providers/leave-service/leave-service';
 import { AppErrorHandlerProvider } from '../providers/app-error-handler/app-error-handler';
-import { NotificationService } from '../providers/notification-service/notification-service';
 import { ReportTeamPage } from '../pages/report-team/report-team';
 import { ReportAnnualPage } from '../pages/report-annual/report-annual';
 import { ReportReporteePage } from '../pages/report-reportee/report-reportee';
@@ -78,8 +76,6 @@ import { NotificationServiceV2 } from '../providers/notification-service-v2/noti
     SplashScreen,    
     AuthServiceProvider,
     UserServiceProvider,
-    LeaveServiceProvider,
-    NotificationService,
     TeamServiceProvider,
     Camera,
     ImageProvider,

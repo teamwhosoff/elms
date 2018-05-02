@@ -36,10 +36,10 @@ export class NotificationServiceV2 {
                                     user.manager = managerRef.data();
                                     result.owner = user;
 
-                                    if (user.email == n.targetUserID) {
+                                    if (user.email == this.appContext.myProfileObject.email) {
                                         result.isMyLeave = true;
                                     }
-                                    else if (user.manager.email == n.targetUserID) {
+                                    else if (user.manager.email == this.appContext.myProfileObject.email) {
                                         result.isMyReporteeLeave = true;
                                     }
 
