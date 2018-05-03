@@ -52,7 +52,7 @@
     "moment": "^2.20.1",
     "ng2-charts": "^1.6.0",
     "node-sass": "^4.7.2",
-    "rxjs": "5.5.2",
+    "rxjs": "^5.5.4",
     "sw-toolbox": "3.6.0",
     "time-ago-pipe": "^1.2.1",
     "zone.js": "0.8.18"
@@ -60,7 +60,7 @@
   "devDependencies": {
     "@angular/cli": "^1.7.4",
     "@ionic/app-scripts": "^3.1.9",
-    "typescript": "2.8.3"
+    "typescript": "^2.4.2"
   },
   "description": "An Ionic project",
   "cordova": {
