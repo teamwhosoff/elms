@@ -16,3 +16,5 @@ before_script:
 script:
   - ionic build --platform browser
 
+after_success:  
+  - firebase deploy --token "${FIREBASE_TOKEN}"
