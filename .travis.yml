@@ -6,7 +6,7 @@ sudo: required
 
 branches:
   only:
-    - firestore
+    - master
 
 before_script:
   - npm install -g firebase-tools
