@@ -30,24 +30,33 @@
     </ion-card-content>
     <hr>
   </ion-card>
-
-<div *ngIf="appContext.duringthisTimeCollection">
+  <div *ngIf="appContext.duringthisTimeCollection | filterByIsManagerFlag: appContext.myTeamMembersCollection: appContext.myReporteesCollection: appContext.myProfileObject; else loading">
   <h3 style="position: relative;left: 6px;">During This Time</h3>
 
   <ion-list>
     <ion-item  *ngFor="let res of appContext.duringthisTimeCollection | filterByIsManagerFlag: appContext.myTeamMembersCollection: appContext.myReporteesCollection: appContext.myProfileObject">
+      <ion-item *ngIf="res?.owner?.name!=name">
       <ion-thumbnail item-start>
         <img [src]="res.owner.photoUrl ? res.owner.photoUrl : 'assets/imgs/defaults/user.jpg'">
       </ion-thumbnail>
       <h2 class="itemStyle">{{res?.owner?.name }}</h2>
       <p class="contentStyle"> {{res?.owner?.team?.name }}</p>
-
       <p>{{res?.from | date : "MMM d, y"}}&nbsp;
         <ion-icon name="arrow-round-forward"></ion-icon>&nbsp;
         {{res?.to | date : "MMM d, y"}}
       </p>
       <hr>
     </ion-item>
+    </ion-item>
   </ion-list>
 </div>
+
+<ng-template #loading>
+  <img style="margin-left: auto;margin-right: auto;display: block;" [src]="'assets/imgs/defaults/noresults.jpg'">
+  <br/>
+  <div style="text-align: center;">
+    <span class="contentStyle">Whoops!!! &nbsp;</span>
+    <span class="itemStyle">No Results Found </span>
+  </div>
+</ng-template>
 </ion-content>
