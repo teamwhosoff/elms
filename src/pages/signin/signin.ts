@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import * as firebase from 'firebase';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { commonMethods } from '../../helper/common-methods';
 import { ToastController } from 'ionic-angular';
@@ -23,6 +24,14 @@ export class SigninPage {
     this.signInForm = this.formBuilder.group({
       userid: [null, ([Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}$'), Validators.required])],
       password: [null, Validators.compose([Validators.required])]
+    });
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log("User is already logged in");
+        this.appContext.myAccount.next(user);
+        this.navCtrl.setRoot("HomePage");
+      }
     });
   }
 
